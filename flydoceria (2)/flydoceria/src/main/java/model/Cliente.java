@@ -1,48 +1,28 @@
 package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
+import java.util.List;
 
 @Entity
 public class Cliente {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
+	@NotNull
+	@Size(min = 2, max = 60)
 	private String nome;
+
+	@NotNull
+	@Pattern(regexp = "^\\(\\d{2}\\) \\d{4,5}-\\d{4}$", message = "Formato de telefone inválido. Use (XX) XXXX-XXXX ou (XX) XXXXX-XXXX")
 	private String contato;
 
-	public Cliente() {
-	}
-
-	public Cliente(int id, String name, String contato) {
-
-		this.id = id;
-		this.nome = name;
-		this.contato = contato;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String name) {
-		this.nome = name;
-	}
-
-	public String getContato() {
-		return contato;
-	}
-
-	public void setContato(String contato) {
-		this.contato = contato;
-	}
+	@OneToMany(mappedBy = "cliente")
+	private List<Pedido> pedidos;
 
 }

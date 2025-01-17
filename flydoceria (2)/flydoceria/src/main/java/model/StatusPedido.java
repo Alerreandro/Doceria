@@ -1,11 +1,10 @@
 package model;
 
 public enum StatusPedido {
-	
-	Pendente,
-	Produzindo,
-	Enviado,
-	Entregue,
-	Cancelado
-		
+
+	PENDENTE,
+	PRODUZINDO,
+	ENVIADO,
+	ENTREGUE,
+	CANCELADO
 }
