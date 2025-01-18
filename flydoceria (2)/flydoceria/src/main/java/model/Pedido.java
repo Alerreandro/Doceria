@@ -23,8 +23,8 @@ public class Pedido {
 
 	private int quantidade;
 
-    @Embedded
-    private Endereco enderecoEntrega;
+	@Embedded
+    private Endereco endereco;
 
 	private Boolean statusPagamento;
 
@@ -38,8 +38,7 @@ public class Pedido {
 
 	public void calcularValorTotal() {
 		this.valorTotal = produtos.stream()
-				.mapToDouble(produto -> produto.getPreco() * quantidade)
+				.mapToDouble(produto -> produto.getPreco() * produto.getQuantidade())
 				.sum();
-
 	}
 }

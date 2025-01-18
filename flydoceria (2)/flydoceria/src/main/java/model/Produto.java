@@ -26,4 +26,7 @@ public class Produto {
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
+    public @NotNull @Size(min = 2, max = 60) Double getQuantidade() {
+        return null;
+    }
 }

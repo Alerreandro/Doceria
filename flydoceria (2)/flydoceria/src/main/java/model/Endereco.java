@@ -1,14 +1,16 @@
 package model;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Embeddable
 @Entity
 public class Endereco {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
 
 	private String logradouro;
 	private int numero;
