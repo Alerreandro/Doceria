@@ -1,11 +1,13 @@
-package service;
+package com.flydoceria.service;
 
-import model.Produto;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ProdutoRepository;
 
-import java.util.*;
+import model.Produto;
+import repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
