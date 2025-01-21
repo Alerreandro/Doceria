@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "repository")
+@EnableJpaRepositories(basePackages = "com/flydoceria/repository")
 @EntityScan(basePackages = "model")
 public class FlydoceriaApplication {
 
